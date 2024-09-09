@@ -8,9 +8,9 @@
 </head>
 <body>
     <div class="container-one">
-        <h3>Username</h3>
+        <h3>To do List</h3>
         <div class="add-task-container">
-            <div class="add-task">
+            <div class="add-task" id="addTaskButton">
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
                 </svg>
@@ -47,24 +47,33 @@
     <div class="container-two">
         <h2>Today</h2>
         <div class="task-container">
-            <div class="task">
-                <input type="checkbox" class="task-checkbox" id="task1">
-                <div class="task-details">
-                    <p>Task</p>
-                    <p>Priority</p>
-                    <p>Due Date</p>
-                </div>
-                <svg class="icon clickable" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <title>close</title>
-                    <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
-                </svg>
-            </div>
         </div>
-        <div class="add-task">
+        <div class="add-task" id="addTaskButton">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
             </svg>
             <p>Add a new task</p>
+        </div>
+    </div>
+
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Task</h2>
+            <input type="text" id="taskTitle" placeholder="Title">
+            <input type="text" id="taskDescription" placeholder="Description">
+            <input type="date" id="taskDueDate">
+            <select name="taskCategory" id="taskCategory">
+                <option value="Work">Work</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Home">Home</option>
+            </select>
+            <select id="taskPriority">
+                <option value="1">Low</option>
+                <option value="2">Medium</option>
+                <option value="3">High</option>
+            </select>
+            <button id="submitTask">Add Task</button>
         </div>
     </div>
 </body>
