@@ -9,6 +9,14 @@ function addTaskModal() {
     addTaskButtons.forEach(button => {
     button.addEventListener('click', () => {
         modal.style.display = 'block';
+
+        // Clear input fields
+        document.getElementById('taskTitle').value = '';
+        document.getElementById('taskDescription').value = '';
+        document.getElementById('taskDueDate').value = '';
+        document.getElementById('taskPriority').value = '1';
+        document.getElementById('taskCategory').value = 'Work';
+        document.getElementById('taskNotes').value = '';
     });
 });
 

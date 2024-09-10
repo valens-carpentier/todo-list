@@ -17,11 +17,13 @@ const myTasks = [
     }
 ];
 
+import { expandModal } from './expandModal.js';
+
 function displayTasks() {
     const taskContainer = document.querySelector('.task-container');
     taskContainer.innerHTML = '';
     
-    myTasks.forEach(task => {
+    myTasks.forEach((task, index) => {
         if (!task.title && !task.description && !task.dueDate && !task.priority && !task.category && !task.notes) {
             return;
         }
@@ -71,6 +73,12 @@ function displayTasks() {
         taskDiv.appendChild(checkbox);
         taskDiv.appendChild(taskDetails);
         taskDiv.appendChild(deleteButton);
+
+        taskDiv.dataset.taskId = index; // Add this line
+
+        taskDetails.addEventListener('click', () => {
+            expandModal(index); // Add this event listener
+        });
 
         taskContainer.appendChild(taskDiv);
     });
