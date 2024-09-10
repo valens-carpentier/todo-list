@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <link rel="stylesheet" href="84bb4fc080631c2605f1.css">
+<script defer src="main.js"></script></head>
+<body>
+    <div class="container-one">
+        <h3>To do List</h3>
+        <div class="add-task-container">
+            <div class="add-task" id="addTaskButton">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                </svg>
+                <p>Add a new task</p>
+            </div>
+        </div>
+        
+        <h3 class="date-select">Today</h3>
+        <h3 class="date-select">Upcoming</h3>
+        <div class="category-container">
+            <div>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <title>pound</title><path d="M5.41,21L6.12,17H2.12L2.47,15H6.47L7.53,9H3.53L3.88,7H7.88L8.59,3H10.59L9.88,7H15.88L16.59,3H18.59L17.88,7H21.88L21.53,9H17.53L16.47,15H20.47L20.12,17H16.12L15.41,21H13.41L14.12,17H8.12L7.41,21H5.41M9.53,9L8.47,15H14.47L15.53,9H9.53Z" />
+                </svg>
+                <p class="category-text" value="All">All</p>
+            </div>
+            <div>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <title>pound</title><path d="M5.41,21L6.12,17H2.12L2.47,15H6.47L7.53,9H3.53L3.88,7H7.88L8.59,3H10.59L9.88,7H15.88L16.59,3H18.59L17.88,7H21.88L21.53,9H17.53L16.47,15H20.47L20.12,17H16.12L15.41,21H13.41L14.12,17H8.12L7.41,21H5.41M9.53,9L8.47,15H14.47L15.53,9H9.53Z" />
+                </svg>
+                    <p class="category-text" value="Work">Work</p>
+            </div>
+
+            <div>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <title>pound</title><path d="M5.41,21L6.12,17H2.12L2.47,15H6.47L7.53,9H3.53L3.88,7H7.88L8.59,3H10.59L9.88,7H15.88L16.59,3H18.59L17.88,7H21.88L21.53,9H17.53L16.47,15H20.47L20.12,17H16.12L15.41,21H13.41L14.12,17H8.12L7.41,21H5.41M9.53,9L8.47,15H14.47L15.53,9H9.53Z" />
+                </svg>
+                <p class="category-text" value="Fitness">Fitness</p>
+            </div>
+
+            <div>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <title>pound</title><path d="M5.41,21L6.12,17H2.12L2.47,15H6.47L7.53,9H3.53L3.88,7H7.88L8.59,3H10.59L9.88,7H15.88L16.59,3H18.59L17.88,7H21.88L21.53,9H17.53L16.47,15H20.47L20.12,17H16.12L15.41,21H13.41L14.12,17H8.12L7.41,21H5.41M9.53,9L8.47,15H14.47L15.53,9H9.53Z" />
+                </svg>
+                <p class="category-text" value="Home">Home</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-two">
+        <h2>Today</h2>
+        <div class="task-container">
+        </div>
+        <div class="add-task" id="addTaskButton">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+            </svg>
+            <p>Add a new task</p>
+        </div>
+    </div>
+
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <input type="text" id="taskTitle" placeholder="Title">
+            <input type="text" id="taskDescription" placeholder="Description">
+            <input type="date" id="taskDueDate">
+            <select name="taskCategory" id="taskCategory">
+                <option value="Work">Work</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Home">Home</option>
+            </select>
+            <select id="taskPriority">
+                <option value="1">Low</option>
+                <option value="2">Medium</option>
+                <option value="3">High</option>
+            </select>
+            <textarea id="taskNotes" placeholder="Notes"></textarea>
+            <button id="submitTask">Save</button>
+        </div>
+    </div>
+    
+    <script src="ec64c2d2298fdacb14c3.js"></script>
+
+</body>
+</html>
