@@ -1,8 +1,10 @@
+import { format } from 'date-fns';
+
 const myTasks = [
     {
         title: 'Work out',
         description: 'Go to the gym',
-        dueDate: '2024-01-01',
+        dueDate: '2024-09-10',
         priority: '2',
         category: 'Fitness',
         notes: 'Notes 1'
@@ -10,7 +12,7 @@ const myTasks = [
     {
         title: 'Work on code',
         description: 'Code each day at 7am',
-        dueDate: '2024-01-02',
+        dueDate: '2024-09-11', 
         priority: '1',
         category: 'Work',
         notes: 'Notes 2'
@@ -22,6 +24,20 @@ import { expandModal } from './expandModal.js';
 function displayTasks() {
     const taskContainer = document.querySelector('.task-container');
     taskContainer.innerHTML = '';
+
+    const storedTasks = localStorage.getItem('tasks');
+
+    if (storedTasks) {
+        if (storedTasks.length === 0) {
+            const message = document.createElement('p');
+            message.textContent = 'No tasks found';
+            taskContainer.appendChild(message);
+            return;
+        } else {
+            myTasks.length = 0;
+            myTasks.push(...JSON.parse(storedTasks));
+        }
+    }
     
     myTasks.forEach((task, index) => {
         if (!task.title && !task.description && !task.dueDate && !task.priority && !task.category && !task.notes) {
@@ -39,6 +55,7 @@ function displayTasks() {
         
         const title = document.createElement('p');
         const dueDate = document.createElement('p');
+        dueDate.classList.add('date');
         const priority = document.createElement('p');
         const category = document.createElement('p');
         category.classList.add('category');
@@ -52,13 +69,14 @@ function displayTasks() {
         taskDetails.appendChild(dueDate);
         taskDetails.appendChild(priority);
         taskDetails.appendChild(category);
-        // Replace the SVG delete button with a text button
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
         deleteButton.classList.add('delete-button');
 
         deleteButton.addEventListener('click', () => {
             myTasks.splice(myTasks.indexOf(task), 1);
+            localStorage.removeItem('tasks');
+            localStorage.setItem('tasks', JSON.stringify(myTasks));
             displayTasks();
         });
 

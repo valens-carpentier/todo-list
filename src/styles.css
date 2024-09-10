@@ -7,52 +7,31 @@
 
 /* General styles */
 body {
-    font-family: 'Courier New', monospace;
-    background-color: #0a0a0a;
-    color: #00ff00;
-    display: flex; /* Add flex display to the body */
+    font-family: Arial, sans-serif;
+    background-color: #f5f5dc;
+    color: #333;
+    display: flex;
 }
 
 svg {
-    fill: #00ff00;
+    fill: #4a4a4a;
 }
 
 /* Container styles */
 .container-one {
     width: 250px;
-    background-color: #111;
+    background-color: #e6e6cc;
     padding: 20px;
     height: 100vh;
-    border-right: 1px solid #00ff00;
-    flex-shrink: 0; /* Prevent container from shrinking */
-}
-
-.container-one > div {
-    display: flex;
-}
-
-.category-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.category-container > div {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; 
-}
-
-.add-task-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; 
+    border-right: 1px solid #ccc;
+    flex-shrink: 0;
 }
 
 .container-two {
-    flex-grow: 1; /* Allow container to grow and fill remaining space */
+    flex-grow: 1;
     padding: 20px;
-    overflow-y: auto; /* Add scrolling if content overflows */
-    background-color: #0a0a0a;
+    overflow-y: auto;
+    background-color: #f5f5dc;
 }
 
 /* Icon styles */
@@ -65,46 +44,42 @@ svg {
 
 /* Header styles */
 h2, h3 {
-    color: #00ff00;
-    text-shadow: 0 0 5px #00ff00;
+    color: #4a4a4a;
     margin-bottom: 15px;
 }
 
 /* Task styles */
 .task-container {
-    background-color: #111;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,255,0,0.3);
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .task {
     display: flex;
     align-items: center;
     padding: 12px 15px;
-    border-bottom: 1px solid #00ff00;
+    border-bottom: 1px solid #e6e6cc;
     transition: background-color 0.2s ease;
     cursor: pointer;
 }
 
 .task-checkbox {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #00ff00;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc;
     border-radius: 3px;
     background-color: transparent;
     cursor: pointer;
     position: relative;
     margin-right: 12px;
     transition: all 0.3s ease;
-    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
 }
 
 .task-checkbox:checked {
-    background-color: #00ff00;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+    background-color: #4a4a4a;
+    border-color: #4a4a4a;
 }
 
 .task-checkbox:checked::before {
@@ -113,25 +88,24 @@ h2, h3 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #0a0a0a;
+    color: #fff;
     font-size: 14px;
     font-weight: bold;
 }
 
 .task-checkbox:hover {
-    border-color: #00cc00;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+    border-color: #4a4a4a;
 }
 
 .task-details {
     display: flex;
-    align-items: center; /* Changed from flex-start to center */
+    align-items: center;
     gap: 20px;
-    flex-grow: 1; /* Allow task details to grow and fill space */
+    flex-grow: 1;
 }
 
 .task-details > p {
-    border-right: 1px solid #00ff00;
+    border-right: 1px solid #ccc;
     padding-right: 10px;
 }
 
@@ -139,54 +113,31 @@ h2, h3 {
     border-right: none;
 }
 
-.task-checkbox {
-    border-right: 1px solid #00ff00;
-    padding-right: 10px;
-}
-
 /* Add task button styles */
 .add-task {
     display: flex;
     align-items: center;
-    color: #00ff00;
+    color: #4a4a4a;
     cursor: pointer;
+    margin-top: 15px;
 }
 
 .add-task:hover {
-    color: #ff00ff;
-    text-shadow: 0 0 5px #ff00ff;
-}
-
-.task:hover {
-    opacity: 1;
-    background-color: #1a1a1a;
+    color: #333;
 }
 
 /* Modal styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-}
-
 .modal-content {
-    background-color: #111;
-    margin: 15% auto;
+    background-color: #f5f5dc;
     padding: 20px;
-    border: 1px solid #00ff00;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     width: 80%;
     max-width: 500px;
-    box-shadow: 0 0 20px rgba(0,255,0,0.5);
 }
 
 .close {
-    color: #00ff00;
+    color: #4a4a4a;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -195,7 +146,7 @@ h2, h3 {
 
 .close:hover,
 .close:focus {
-    color: #ff00ff;
+    color: #333;
     text-decoration: none;
     cursor: pointer;
 }
@@ -204,68 +155,109 @@ h2, h3 {
 #taskModal input,
 #taskModal select,
 #taskModal textarea {
-    background-color: #0a0a0a;
-    color: #00ff00;
-    border: 1px solid #00ff00;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     margin-bottom: 10px;
     box-sizing: border-box;
-    font-family: 'Courier New', monospace;
+    font-family: Arial, sans-serif;
     font-size: 14px;
 }
 
 #taskModal label {
     display: block;
     margin-bottom: 5px;
-    color: #00ff00;
+    color: #4a4a4a;
 }
 
 #submitTask {
-    background-color: #00ff00;
-    color: #0a0a0a;
+    background-color: #4a4a4a;
+    color: #fff;
     width: 100%;
     padding: 10px;
     border: none;
     cursor: pointer;
-    width: 100%;
 }
 
 #submitTask:hover {
-    background-color: #00cc00;
+    background-color: #333;
 }
 
-/* New styles for hacker aesthetic */
-::selection {
-    background-color: #00ff00;
-    color: #0a0a0a;
-}
-
-@keyframes glitch {
-    0% { text-shadow: 2px 0 0 #ff00ff, -2px 0 0 #00ffff; }
-    25% { text-shadow: -2px 0 0 #ff00ff, 2px 0 0 #00ffff; }
-    50% { text-shadow: 2px 0 0 #ff00ff, -2px 0 0 #00ffff; }
-    75% { text-shadow: -2px 0 0 #ff00ff, 2px 0 0 #00ffff; }
-    100% { text-shadow: 2px 0 0 #ff00ff, -2px 0 0 #00ffff; }
-}
-
-h2:hover, h3:hover {
-    animation: glitch 0.3s infinite;
-}
-
+/* Delete button styles */
 .delete-button {
-    background-color: #ff0000;
-    color: #0a0a0a;
+    background-color: #e6e6cc;
+    color: #4a4a4a;
     border-radius: 5px;
     padding: 5px 10px;
     border: none;
     cursor: pointer;
-    font-family: 'Courier New', monospace;
+    font-family: Arial, sans-serif;
     font-size: 14px;
     font-weight: bold;
     transition: background-color 0.3s;
 }
 
 .delete-button:hover {
-    background-color: #cc0000;
+    background-color: #d9d9bf;
+}
+
+/* Category styles */
+.category-container {
+    margin-top: 20px;
+}
+
+.category-container > div {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.category-container > div:hover {
+    background-color: #d9d9bf;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+}
+
+.category-text {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Date select styles */
+.date-select {
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+.date-select:hover {
+    background-color: #d9d9bf;
+}
+
+/* Add task button styles */
+.add-task-container {
+    margin-top: 20px;
+}
+
+.add-task {
+    display: flex;
+    align-items: center;
+    color: #4a4a4a;
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+.add-task:hover {
+    background-color: #d9d9bf;
+}
+
+.add-task p {
+    margin: 0;
+    font-size: 14px;
 }
