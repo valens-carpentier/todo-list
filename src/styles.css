@@ -202,7 +202,8 @@ h2, h3 {
 
 /* Modal input styles */
 #taskModal input,
-#taskModal select {
+#taskModal select,
+#taskModal textarea {
     background-color: #0a0a0a;
     color: #00ff00;
     border: 1px solid #00ff00;
